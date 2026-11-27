@@ -5,8 +5,12 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 
 import com.tsuo1951.gtceumorethings.common.data.MoreThingsMachines;
+import com.tsuo1951.gtceumorethings.common.data.MoreThingsBlocks;
+import com.tsuo1951.gtceumorethings.common.data.MoreThingsMachines;
+import com.tsuo1951.gtceumorethings.common.data.MoreThingsRecipeTypes;
 
 import java.util.function.Consumer;
 
@@ -112,6 +116,91 @@ public class MoreThingsRecipes {
                 .outputFluids(DistilledWater.getFluid(1000))
                 .duration(300)
                 .EUt(VA[EV])
+                .save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("plasma_synthesis_reactor")
+                .inputItems(GTMachines.HULL[ZPM].asStack())
+                .inputItems(GTItems.FIELD_GENERATOR_ZPM.asStack(4))
+                .inputItems(CustomTags.ZPM_CIRCUITS, 4)
+                .inputItems(MoreThingsBlocks.PLASMA_SYNTHESIS_CASING.asStack(4))
+                .inputItems(MoreThingsBlocks.MAGNETIC_CONFINEMENT_COIL.asStack(4))
+                .inputItems(plate, TitaniumCarbideMXene, 4)
+                .outputItems(MoreThingsMachines.PLASMA_SYNTHESIS_REACTOR.asStack())
+                .duration(800)
+                .EUt(VA[ZPM])
+                .save(provider);
+
+        MoreThingsRecipeTypes.PLASMA_SYNTHESIS_RECIPES.recipeBuilder("mxene_plasma_synthesis")
+                .inputItems(dust, Titanium, 3)
+                .inputItems(dust, Carbon, 2)
+                .inputFluids(Helium.getFluid(FluidStorageKeys.PLASMA, 1000))
+                .outputItems(dust, TitaniumCarbideMXene, 4)
+                .outputFluids(Helium.getFluid(1000))
+                .addData("mode", 1)
+                .addData("min_temp", 30000)
+                .addData("max_temp", 0)
+                .addData("min_density", 10)
+                .addData("min_confinement", 800)
+                .duration(200)
+                .EUt(VA[ZPM])
+                .save(provider);
+
+        MoreThingsRecipeTypes.PLASMA_SYNTHESIS_RECIPES.recipeBuilder("mxene_plasma_deposition")
+                .inputItems(plate, TungstenSteel, 1)
+                .inputItems(foil, TitaniumCarbideMXene, 2)
+                .inputFluids(Oxygen.getFluid(FluidStorageKeys.PLASMA, 500))
+                .outputItems(plate, TitaniumCarbideMXene, 2)
+                .outputFluids(Oxygen.getFluid(500))
+                .addData("mode", 2)
+                .addData("min_temp", 10000)
+                .addData("max_temp", 22000)
+                .addData("min_density", 7)
+                .addData("min_confinement", 600)
+                .duration(160)
+                .EUt(VA[ZPM])
+                .save(provider);
+
+        MoreThingsRecipeTypes.PLASMA_SYNTHESIS_RECIPES.recipeBuilder("black_steel_plasma_nitriding")
+                .inputItems(ingot, Steel, 4)
+                .inputFluids(Nitrogen.getFluid(FluidStorageKeys.PLASMA, 500))
+                .outputItems(ingot, BlackSteel, 4)
+                .outputFluids(Nitrogen.getFluid(500))
+                .addData("mode", 3)
+                .addData("min_temp", 5000)
+                .addData("max_temp", 15000)
+                .addData("min_density", 8)
+                .addData("min_confinement", 500)
+                .duration(120)
+                .EUt(VA[LuV])
+                .save(provider);
+
+        MoreThingsRecipeTypes.PLASMA_SYNTHESIS_RECIPES.recipeBuilder("silicon_plasma_oxidation")
+                .inputItems(dust, Silicon, 4)
+                .inputFluids(Oxygen.getFluid(FluidStorageKeys.PLASMA, 1000))
+                .outputItems(dust, SiliconDioxide, 12)
+                .outputFluids(Oxygen.getFluid(1000))
+                .addData("mode", 4)
+                .addData("min_temp", 10000)
+                .addData("max_temp", 25000)
+                .addData("min_density", 10)
+                .addData("min_confinement", 700)
+                .duration(140)
+                .EUt(VA[ZPM])
+                .save(provider);
+
+        MoreThingsRecipeTypes.PLASMA_SYNTHESIS_RECIPES.recipeBuilder("rutile_plasma_reduction")
+                .inputItems(dust, Rutile, 3)
+                .inputFluids(Iron.getFluid(FluidStorageKeys.PLASMA, 1000))
+                .outputItems(ingot, Titanium, 3)
+                .outputFluids(Oxygen.getFluid(2000))
+                .outputFluids(Iron.getFluid(1000))
+                .addData("mode", 5)
+                .addData("min_temp", 20000)
+                .addData("max_temp", 35000)
+                .addData("min_density", 20)
+                .addData("min_confinement", 1200)
+                .duration(240)
+                .EUt(VA[UV])
                 .save(provider);
     }
 }
