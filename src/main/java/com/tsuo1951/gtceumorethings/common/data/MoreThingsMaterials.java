@@ -60,6 +60,7 @@ public class MoreThingsMaterials {
                 .color(0x252B29)
                 .iconSet(MaterialIconSet.ROUGH)
                 .components(Titanium, 3, Carbon, 2)
+                .formula("Ti3C2Tx", true)
                 .flags(DISABLE_DECOMPOSITION)
                 .buildAndRegister();
 
