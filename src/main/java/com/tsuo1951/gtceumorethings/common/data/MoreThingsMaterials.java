@@ -79,6 +79,7 @@ public class MoreThingsMaterials {
                 .secondaryColor(0x0E1114)
                 .iconSet(MaterialIconSet.SHINY)
                 .components(Titanium, 3, Carbon, 2)
+                .formula("Ti3C2Tx", true)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, DISABLE_DECOMPOSITION)
                 .buildAndRegister();
     }
