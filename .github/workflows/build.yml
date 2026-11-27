@@ -1,0 +1,42 @@
+name: build
+
+on: [workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: setup gradle
+        uses: gradle/actions/setup-gradle@v5
+
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: clean build
+        run: ./gradlew clean build --no-daemon
+
+      - name: capture build artifacts
+        if: success()
+        uses: actions/upload-artifact@v7
+        with:
+          name: GTCEuM-More-Things
+          path: build/libs/
+          retention-days: 1
