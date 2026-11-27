@@ -7,8 +7,7 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
-import com.tsuo1951.gtceumorethings.common.data.MoreThingsMaterials;
-import com.tsuo1951.gtceumorethings.common.data.MoreThingsMachines;
+import com.tsuo1951.gtceumorethings.common.data.*;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,6 +29,8 @@ public final class GTCEuMoreThings {
         modBus.addListener(this::addMaterials);
         modBus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
         modBus.addGenericListener(MachineDefinition.class, this::registerMachines);
+
+        MoreThingsBlocks.init();
     }
 
     public static ResourceLocation id(String path) {
