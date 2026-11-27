@@ -109,10 +109,10 @@ public class ProcessingArrayMachine extends WorkableElectricMultiblockMachine {
         }
         GTRecipeType primary = types[0];
         return primary != GTRecipeTypes.DUMMY_RECIPES
-                && primary != GTRecipeTypes.STEAM_TURBINE_RECIPES
-                && primary != GTRecipeTypes.GAS_TURBINE_RECIPES
-                && primary != GTRecipeTypes.COMBUSTION_GENERATOR_RECIPES
-                && primary != GTRecipeTypes.PLASMA_GENERATOR_RECIPES;
+                && primary != GTRecipeTypes.STEAM_TURBINE_FUELS
+                && primary != GTRecipeTypes.GAS_TURBINE_FUELS
+                && primary != GTRecipeTypes.COMBUSTION_GENERATOR_FUELS
+                && primary != GTRecipeTypes.PLASMA_GENERATOR_FUELS;
     }
 
     @Nullable
