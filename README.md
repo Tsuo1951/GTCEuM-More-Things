@@ -10,10 +10,6 @@ GTCEuM More Things is an independent addon and is not an official project of the
 
 Features
 
-- Additional machines and multiblocks.
-- New materials and components.
-- Expanded processing chains.
-- Additional industrial systems.
 - Integration with GregTech CEu Modern.
 
 Features are subject to change during development.
