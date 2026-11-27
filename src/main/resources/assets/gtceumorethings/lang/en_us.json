@@ -8,6 +8,8 @@
   "material.gtceumorethings.colloidal_titanium_carbide_mxene": "Colloidal Titanium Carbide MXene",
   "material.gtceumorethings.titanium_carbide_mxene": "Titanium Carbide MXene",
   "block.gtceumorethings.processing_array": "Processing Array",
+  "block.gtceumorethings.plasma_synthesis_casing": "Plasma Synthesis Casing",
+  "block.gtceumorethings.magnetic_confinement_coil": "Magnetic Confinement Coil",
   "gtceumorethings.machine.processing_array.tooltip.0": "Parallelizes up to 16 single-block machines in one multiblock.",
   "gtceumorethings.machine.processing_array.tooltip.1": "Overclocks up to the inner machine tier and total available EU/t.",
   "gtceumorethings.multiblock.processing_array.machine": "Machines: %sx %s",
