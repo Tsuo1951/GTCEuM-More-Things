@@ -10,11 +10,4 @@
   "block.gtceumorethings.processing_array": "Processing Array",
   "block.gtceumorethings.plasma_synthesis_casing": "Plasma Synthesis Casing",
   "block.gtceumorethings.magnetic_confinement_coil": "Magnetic Confinement Coil",
-  "gtceumorethings.machine.processing_array.tooltip.0": "Parallelizes up to 16 single-block machines in one multiblock.",
-  "gtceumorethings.machine.processing_array.tooltip.1": "Overclocks up to the inner machine tier and total available EU/t.",
-  "gtceumorethings.multiblock.processing_array.machine": "Machines: %sx %s",
-  "gtceumorethings.multiblock.processing_array.max_tier": "Max Recipe Tier: %s",
-  "gtceumorethings.multiblock.processing_array.empty": "Insert single-block machines into the slot",
-  "gtceumorethings.recipe_modifier.no_machine": "No valid machine installed in Processing Array",
-  "gtceumorethings.recipe_modifier.machine_tier_too_low": "Installed machine tier is too low for this recipe"
 }
