@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+
 import com.tsuo1951.gtceumorethings.common.data.MoreThingsMachines;
 
 import java.util.function.Consumer;
