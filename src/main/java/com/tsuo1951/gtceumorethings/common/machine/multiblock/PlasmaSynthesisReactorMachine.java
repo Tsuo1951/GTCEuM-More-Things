@@ -81,7 +81,7 @@ public class PlasmaSynthesisReactorMachine extends CoilWorkableElectricMultibloc
 
             @Override
             public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-                return stack.is(GTItems.PROGRAMMABLE_CIRCUIT.get());
+                return stack.is(GTItems.PROGRAMMED_CIRCUIT.get());
             }
 
             @Override
@@ -142,7 +142,7 @@ public class PlasmaSynthesisReactorMachine extends CoilWorkableElectricMultibloc
 
     public int getOperationMode() {
         ItemStack stack = circuitStorage.getStackInSlot(0);
-        if (stack.isEmpty() || !stack.is(GTItems.PROGRAMMABLE_CIRCUIT.get())) {
+        if (stack.isEmpty() || !stack.is(GTItems.PROGRAMMED_CIRCUIT.get())) {
             return 0;
         }
         if (!stack.hasTag() || !stack.getTag().contains("Configuration")) {
