@@ -209,7 +209,7 @@ public class ProcessingArrayMachine extends WorkableElectricMultiblockMachine {
         Widget widget = super.createUIWidget();
         if (widget instanceof WidgetGroup group) {
             Size size = group.getSize();
-            group.addWidget(new SlotWidget(machineStorage, 0, size.width - 30, size.height - 30)
+            group.addWidget(new SlotWidget(machineStorage, 0, size.width - 26, 4)
                     .setBackgroundTexture(GuiTextures.SLOT));
         }
         return widget;
