@@ -113,16 +113,5 @@ public class MoreThingsRecipes {
                 .duration(300)
                 .EUt(VA[EV])
                 .save(provider);
-
-        ASSEMBLER_RECIPES.recipeBuilder("processing_array")
-                .inputItems(GTMachines.HULL[IV].asStack())
-                .inputItems(GTItems.ROBOT_ARM_IV.asStack(4))
-                .inputItems(CustomTags.IV_CIRCUITS, 4)
-                .inputItems(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.asStack(4))
-                .inputItems(plate, TitaniumCarbideMXene, 4)
-                .outputItems(MoreThingsMachines.PROCESSING_ARRAY.asStack())
-                .duration(600)
-                .EUt(VA[IV])
-                .save(provider);
     }
 }
