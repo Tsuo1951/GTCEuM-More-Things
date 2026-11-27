@@ -83,12 +83,12 @@ public class ProcessingArrayMachine extends WorkableElectricMultiblockMachine {
                 super.onContentsChanged();
                 onMachineStorageChanged();
             }
-        };
-        @Override
+
+            @Override
             public boolean isItemValid(int slot, @NotNull ItemStack stack) {
                 return isValidMachineItem(stack);
             }
-        }
+        };
     }
 
     @Override
