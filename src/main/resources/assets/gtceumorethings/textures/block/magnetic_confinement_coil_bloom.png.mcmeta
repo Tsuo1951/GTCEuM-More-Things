@@ -1,0 +1,9 @@
+{
+    "ldlib": {
+        "connection": "gtmorethings:block/magnetic_confinement_coil",
+        "emissive": true
+    },
+    "shimmer": {
+        "bloom": true
+    }
+}
