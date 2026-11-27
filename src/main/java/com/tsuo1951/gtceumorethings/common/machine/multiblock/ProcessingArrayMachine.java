@@ -84,7 +84,11 @@ public class ProcessingArrayMachine extends WorkableElectricMultiblockMachine {
                 onMachineStorageChanged();
             }
         };
-        this.machineStorage.setFilter(ProcessingArrayMachine::isValidMachineItem);
+        @Override
+            public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+                return isValidMachineItem(stack);
+            }
+        }
     }
 
     @Override
