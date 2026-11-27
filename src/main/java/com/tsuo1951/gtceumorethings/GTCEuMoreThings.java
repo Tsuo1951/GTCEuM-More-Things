@@ -7,6 +7,8 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
+import com.tsuo1951.gtceumorethings.common.data.MoreThingsMaterials;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -38,7 +40,7 @@ public final class GTCEuMoreThings {
     }
 
     private void addMaterials(MaterialEvent event) {
-        
+        MoreThingsMaterials.register();
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
