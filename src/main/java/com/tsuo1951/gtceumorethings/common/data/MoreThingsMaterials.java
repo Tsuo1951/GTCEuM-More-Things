@@ -25,7 +25,7 @@ public class MoreThingsMaterials {
         return new ResourceLocation(GTCEuMoreThings.MOD_ID, path);
     }
 
-    public static void init() {
+    public static void register() {
         TitaniumCarbide = new Material.Builder(id("titanium_carbide"))
                 .dust()
                 .color(0x3B4048)
