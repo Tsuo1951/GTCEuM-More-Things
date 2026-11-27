@@ -19,6 +19,7 @@ import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
+import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
@@ -49,7 +50,7 @@ public class PlasmaSynthesisReactorMachine extends CoilWorkableElectricMultibloc
 
     @Persisted
     @DropSaved
-    protected final NotifiableItemStackHandler circuitStorage;
+    protected final CustomItemStackHandler circuitStorage;
 
     @DescSynced
     private int magneticCoilCount;
@@ -73,7 +74,7 @@ public class PlasmaSynthesisReactorMachine extends CoilWorkableElectricMultibloc
 
     public PlasmaSynthesisReactorMachine(IMachineBlockEntity holder) {
         super(holder);
-        this.circuitStorage = new NotifiableItemStackHandler(this, 1, IO.NONE) {
+        this.circuitStorage = new CustomItemStackHandler(1) {
             @Override
             public int getSlotLimit(int slot) {
                 return 1;
@@ -85,8 +86,8 @@ public class PlasmaSynthesisReactorMachine extends CoilWorkableElectricMultibloc
             }
 
             @Override
-            public void onContentsChanged() {
-                super.onContentsChanged();
+            public void onContentsChanged(int slot) {
+                super.onContentsChanged(slot);
                 if (recipeLogic != null) {
                     recipeLogic.markLastRecipeDirty();
                     recipeLogic.updateTickSubscription();
