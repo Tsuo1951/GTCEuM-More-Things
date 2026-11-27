@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import com.tsuo1951.gtceumorethings.common.data.MoreThingsMaterials;
+import com.tsuo1951.gtceumorethings.common.data.MoreThingsMachines;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -48,6 +49,6 @@ public final class GTCEuMoreThings {
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        
+        MoreThingsMachines.init();
     }
 }
