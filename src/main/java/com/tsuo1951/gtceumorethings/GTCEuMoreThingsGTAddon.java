@@ -29,7 +29,7 @@ public final class GTCEuMoreThingsGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-      
+      MoreThingsRecipes.init(provider);
     }
 
     @Override
