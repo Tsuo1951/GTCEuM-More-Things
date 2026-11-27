@@ -1,1 +1,7 @@
-
+{
+  "variants": {
+    "": {
+      "model": "gtceumorethings:block/plasma_synthesis_casing"
+    }
+  }
+}
